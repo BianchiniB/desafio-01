@@ -1,0 +1,10 @@
+{
+    "baseUrl": "http://automationpractice.com",
+    "experimentalSourceRewriting": true,
+    "watchForFileChanges": false,
+    "testFiles": "**/*.*spec.*",
+    "reporter": "cypress-multi-reporters",
+    "reporterOptions": {
+        "configFile": "reporter-config.json"
+    }
+}

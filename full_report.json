@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-05T01:37:48.862Z",
+    "end": "2021-04-05T01:38:44.029Z",
+    "duration": 54504,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "01f0cd9d-a922-45e8-a348-7bad120fa60d",
+      "title": "",
+      "fullFile": "cypress\\integration\\cadastro.spec.js",
+      "file": "cypress\\integration\\cadastro.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "153c7a87-a7b7-49b0-905b-5ea3d375e780",
+          "title": "Cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastro de usuário no site",
+              "fullTitle": "Cadastro Cadastro de usuário no site",
+              "timedOut": null,
+              "duration": 54504,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('index.php'); // clicar no botão Sign In\ncy.get('.login').click(); // Preencher as informações de e-mail (não pode ser repetido)\ncy.get('#email_create').type(chance.email()); // Clicar no botão Create an Account\ncy.get('#SubmitCreate > span').click(); // Preencher as informações do formulário de cadastro\n// Personal Information\ncy.get('#id_gender1').check();\ncy.get('#customer_firstname').type(chance.first());\ncy.get('#customer_lastname').type(chance.last());\ncy.get('#passwd').type('testeagilizei1010');\ncy.get('select#days').select('20');\ncy.get('select#months').select('August');\ncy.get('select#years').select('1992'); // Your Address\ncy.get('#company').type('Empresa Fictícia');\ncy.get('#address1').type('777 Brockton Avenue, Abington MA 2351, Empresa Fictícia');\ncy.get('#city').type('San Francisco');\ncy.get('select#id_state').select('5', {\n  force: true\n});\ncy.get('#postcode').type('99705');\ncy.get('#phone_mobile').type(chance.phone({\n  formatted: false\n}));\ncy.get('#alias').type('Address Alias'); // Clicar no botão Register\ncy.get('#submitAccount').click(); // Validar que foi redirecionado para a url correta\ncy.url().should('contain', 'controller=my-account'); // Validar exibição do texto 'Welcome to your account'\ncy.get('.info-account').should('contain', 'Welcome to your account');",
+              "err": {},
+              "uuid": "86073057-5285-48e5-b851-0f09812ef790",
+              "parentUUID": "153c7a87-a7b7-49b0-905b-5ea3d375e780",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "86073057-5285-48e5-b851-0f09812ef790"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 54504,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
